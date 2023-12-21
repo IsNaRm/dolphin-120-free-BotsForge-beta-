@@ -9,10 +9,11 @@
 3. Установить python версии 3.9-3.11 (**3.12 работать не будет!!**), убедитесь что при установки поставили галочку "Add Python to PATH"
 4. Открыть консоль вписав cmd вместо пути и выполнить команду pip install -r requirements.txt
    ![image](https://github.com/IsNaRm/dolphin-free-botsforge/assets/11133034/15e32e4f-f79a-426d-a7bd-3d0c07ad70a7)
+5. Скачать файл [Гугл диск](https://drive.google.com/file/d/1DJlUJV6RuuKZ__ky6AG3ryXGNORUnVfi/view?usp=sharing), гитхаб не дает выкладывать файлы весом больше чем 25мб, поэтому так. Этот файл нужно положить в папку files
 
-5. Закрыть долфин если он у вас открыт
-6. Открыть файл start.bat
-7. Запустить Dolphin
+6. Закрыть долфин если он у вас открыт
+7. Открыть файл start.bat
+8. Запустить Dolphin
 
 ## **Settings:**
 В файле **settings.py** вы можете настроить параметр **backup** на **True** или **False**. Если **True** при каждом закрытии браузера будет создаваться бэкап этого профиля в папке browsers_backup
