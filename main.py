@@ -9,6 +9,7 @@ from flask import Flask
 from flask import request
 from flask import send_file
 
+import config
 from modules.files import Files
 from utils import *
 from config import *
@@ -44,6 +45,9 @@ def get_front(folder,file):
 
     return resp.text
 
+@app.route('/get_auth_token')
+def get_token():
+    return config.token
 @app.route('/7d11bbb4production/<folder>/<file>', methods=['GET'])
 def get_other(folder,file):
 
@@ -64,6 +68,7 @@ def get_other(folder,file):
 
 @app.route('/browser_profiles/<int:browser_profile_id>', methods=['GET', 'PATCH'])
 def get_profile(browser_profile_id):
+    config.token = request.headers['Authorization']
     if (request.method == 'GET'):
         if (os.path.exists(os.path.join(os.getcwd(), 'browsers', str(browser_profile_id), 'info.json')) == False):
             resp = send_request(
@@ -159,6 +164,21 @@ def browser_profile_launch_methods(browser_profile_id, method):
         result['data']['browserProfileId'] = int(browser_profile_id)
 
         return result
+    elif (method == 'get-parameters'):
+        file_path = f'browsers/{browser_profile_id}/start_parameters.json'
+        if os.path.exists(file_path):
+            result = Files.read_from_file(file_path)
+            return result
+        else:
+            resp = send_request(
+                        method='POST',
+                        url=REMOTE_API_BASE_URL + '/browser_profiles/' + browser_profile_id +'/get-parameters',
+                        headers=request.headers,
+                        payload=request.json,
+                    )
+            Files.save_to_file(file_path, resp.text)
+            return resp.text
+
 
 
 @app.route('/index.php', methods=['POST'])

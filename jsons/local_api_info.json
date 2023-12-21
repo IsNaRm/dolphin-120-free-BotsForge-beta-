@@ -1,7 +1,7 @@
 {
 	"success": true,
 	"data": {
-		"localapiUrl": "{\"60bafd59.zip\": \"http:\/\/127.0.0.1:5000\/dolphin-anty\/anty-connect\/releases\/download\/60bafd59\/60bafd59.zip\", \"60bafd59.zip.md5\": \"http:\/\/127.0.0.1:5000\/dolphin-anty\/anty-connect\/releases\/download\/60bafd59\/60bafd59.zip.md5\"}",
+		"localapiUrl": "{\"ec1126aaproduction.zip\": \"http:\/\/127.0.0.1:5000\/dolphin-anty\/anty-connect\/releases\/download\/ec1126aaproduction\/ec1126aaproduction.zip\", \"ec1126aaproduction.zip.md5\": \"http:\/\/127.0.0.1:5000\/dolphin-anty\/anty-connect\/releases\/download\/ec1126aaproduction\/ec1126aaproduction.zip.md5\"}",
 		"frontendUrl": "http://127.0.0.1:5000/frontend/index.html",
 		"backendUrl": "http:\/\/127.0.0.1:5000",
 		"type": "production",
